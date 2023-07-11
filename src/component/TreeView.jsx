@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { AiOutlineCaretDown, AiOutlineCaretRight } from 'react-icons/ai';
 
 const TreeNode = ({ node }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,8 +11,8 @@ const TreeNode = ({ node }) => {
 
   return (
     <li>
-      <span className={hasChildren ? 'caret' : ''} onClick={toggleNode}>
-        
+      <span onClick={toggleNode}>
+        {hasChildren ? (isOpen ? <AiOutlineCaretDown /> : <AiOutlineCaretRight />) : ''}
       </span>{node.label}
       {hasChildren && isOpen && (
         <ul className="nested">
