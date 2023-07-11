@@ -136,14 +136,15 @@ const TreeView = () => {
       const lowerCaseLabel = node.label.toLowerCase();
       const lowerCaseTerm = term.toLowerCase();
       const includesTerm = lowerCaseLabel.includes(lowerCaseTerm);
-      const hasChildren = node.children && node.children.length > 0;
+      // const hasChildren = node.children && node.children.length > 0;
 
       if (includesTerm) {
         return true;
-      } else if (hasChildren) {
-        const filteredChildren = filterTreeData(node.children, term);
-        return filteredChildren.length > 0;
-      }
+      } 
+      // else if (hasChildren) {
+      //   const filteredChildren = filterTreeData(node.children, term);
+      //   return filteredChildren.length > 0;
+      // }
 
       return false;
     });
